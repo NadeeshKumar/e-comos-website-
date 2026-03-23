@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Login</title>
+</head>
+<body>
+  <div class="login-box">
+  <h2>
+    Login
+  </h2>
+  <input type="text" id="username" placeholder="Enter Username"><br>
+  <input type="number" id="password" placeholder="Enter Password"><br>
+  <button onclick="login()">Login</button>
+  
+  <p id="error" style="color:red"></p>
+</div>
+</body>
+</html>
+<style>
+body{
+  font-family: Arial;
+  background: linear-gradient(to right, purple, pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px gray;
+  width: 300px;
+  text-align: center;
+}
+h2{
+  color: purple;
+}
+input{
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+button{
+  background: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover{
+  background: darkmagenta;
+}
+</style>
+
+<script>
+function login()
+{
+  let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+if(user === "admin" && pass === "1234"){
+  window.location.href = "main2.html";  
+} else {
+  document.getElementById("error").innerText = "Invalid Login";
+ }
+}
+</script>
